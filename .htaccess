@@ -1,0 +1,7 @@
+# Mensaje de error personalizado en ubicación local
+ErrorDocument 404 /404.html
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^dieselguard.com.mx [NC]
+RewriteRule ^(.*)$ http://www.dieselguard.com.mx/$1 [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
